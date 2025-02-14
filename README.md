@@ -1,1 +1,12 @@
-# testing-code
+- npx playwright show-report
+- npx playwright test
+- npx playwright test --project=chromium
+- npx playwright test --ui 
+- npx playwright test example
+- npx playwright test --debug
+- npx playwright codegen
+- npx playwright --version
+- npx playwright codegen demo.playwright.dev/todomvc
+- npx playwright codegen www.google.com
+- npx playwright test --headed
+- npx playwright test landing-page.spec.ts
