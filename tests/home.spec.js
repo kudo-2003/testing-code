@@ -1,0 +1,33 @@
+// @ts-check
+import { test, expect } from '@playwright/test';
+test('testing home', async ({ page }) => {
+  await page.goto('https://shop-do-bao-ho.onrender.com/');
+  await page.getByText('ĐỒ BẢO HỘ XE MÁY', { exact: true }).click();
+  await page.getByRole('textbox', { name: 'Nhập từ khóa để tìm kiếm' }).click();
+  await page.getByRole('button', { name: 'search Tìm kiếm' }).click();
+  await page.locator('div').filter({ hasText: /^Giỏ hàng$/ }).click();
+  await page.getByText('ĐỒ BẢO HỘ XE MÁY', { exact: true }).click();
+  await page.getByRole('img', { name: 'slider' }).click();
+  await page.getByRole('button', { name: '• 2' }).click();
+  await page.getByRole('heading', { name: 'Chọn Danh Mục' }).click();
+  await page.getByText('Mũ Bảo Hiểm', { exact: true }).click();
+  await page.getByText('Áo', { exact: true }).click();
+  await page.getByText('Tất cả sản phẩm').click();
+  await page.getByText('Áo giáp Yamaha 431120,000VNĐ').click();
+  // await page.getByRole('button', { name: 'Xem thêm' }).click();
+  await page.getByText('ĐỒ BẢO HỘ XE MÁY', { exact: true }).click();
+  await page.getByRole('heading', { name: 'Thông tin liên hệ' }).click();
+  // await page.getByRole('heading', { name: 'Đồ Bảo Hộ Xe Máy' }).click();
+  await page.getByText('Chuyên cung cấp đồ bảo hộ xe').click();
+  await page.getByText('📍 Địa chỉ: 123 Đường ABC, Qu').click();
+  await page.getByText('📞 Hotline: 0123 456').click();
+  await page.getByText('📧 Email: support@baohoxemay.').click();
+  await page.getByText('© 2024 Đồ Bảo Hộ Xe Máy. All').click();
+  await page.getByRole('img', { name: 'youtube' }).locator('svg').click();
+  await page.getByRole('img', { name: 'instagram' }).locator('svg').click();
+  await page.getByRole('img', { name: 'facebook' }).locator('svg').click();
+  await page.getByRole('heading', { name: 'Theo dõi chúng tôi' }).click();
+  await page.getByRole('textbox', { name: 'Nhập từ khóa để tìm kiếm' }).click();
+  await page.getByRole('textbox', { name: 'Nhập từ khóa để tìm kiếm' }).fill('Áo Giáp');
+  await page.getByRole('textbox', { name: 'Nhập từ khóa để tìm kiếm' }).press('Enter');
+});
